@@ -1,0 +1,42 @@
+<h3>View Details Form</h3>
+<div class="container bg-light">
+<div>
+  <label style="font-size: 20px">Subscription Id :</label>
+  <input [(ngModel)]="subsid" type="text">
+</div>
+
+<div style="margin-top: 20px">
+  <button>Clear</button>
+  <button style="margin-left: 20px" (click) = "getinfo()">View Subscription Details</button>
+</div>
+
+<div style="margin-top: 20px">
+  <div>
+    <label>Subscription ID :</label>
+    <label style="margin-left: 30px">{{subsid}}</label>
+  </div>
+</div>
+
+<div style="margin-top: 20px">
+  <div>
+    <label>Total Subscription Cost :</label>
+    <label style="margin-left: 30px">{{userinfo?.totalCost}}</label>
+  </div>
+</div>
+
+<table>
+    <tr>
+        <th>Channel Name</th>
+        <th>Cost Per Month</th>
+      </tr>
+      <tr *ngFor="let p of userinfo.channels; index as i">
+        <td>
+        {{p}}
+        </td>
+        <td>
+        {{userinfo?.cost[i]}}
+        </td>        
+      </tr>
+
+</table>
+</div>

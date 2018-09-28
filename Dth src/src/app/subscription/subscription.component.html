@@ -1,0 +1,31 @@
+<h1>DTH Subscription</h1>
+
+<div>
+  <label>  Customer Subscription Id : </label>
+  <input [(ngModel)] = "subsid" style="margin-left: 25px" type="text"  name ="SubscriptionId" required>
+</div>
+<div>
+  <label>Channels :</label>
+    <form action="/action_page.php">
+      <select (change)="selectChangeHandler($event)"name="channel">
+        <option value="Discovery Channel">Discovery Channel</option>
+        <option value="Star Sports 2">StarSports2</option>
+        <option value="Star Sports 1">StarSports1</option>
+        <option value="Sony">Sony</option>
+        <option value="Zee Tv">Zee Tv</option>
+        <option value="Star Movies">Star Movies</option>
+        <option value="Times Now">Times Now</option>
+      
+      </select>
+      <br><br>
+    </form>
+</div>
+<div>
+<label> Date Of Subscription :</label>
+<input [(ngModel)] = "date1" type="date" name = "SubsDate" required>
+</div>
+<br><br>
+<div>
+  <button [routerLink]="['/home']">Home</button>
+  <button style="margin-left :30px " [routerLink]="['/home']" (click) = "subscribe()">Subscribe</button>
+</div>
